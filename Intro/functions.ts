@@ -7,7 +7,7 @@
 function addTwo(num){
     return num+2;
 }
-console.log(addTwo("2")); //Not howing error for passing strign to num
+console.log(addTwo("2")); //Not Throwing error for passing strign to num
 
 /* Good method 1*/
 function addTwoGood(num: number){
@@ -21,9 +21,37 @@ function signUpUser(name: string, email: string,password: string, isPaid: boolea
 signUpUser("swayam","swayam","swayam",false);
 
 /* Another Method for default (input_parameter: type = default_value) 
-So now if you dont pass any value it wont throw error cause you have one default value*/
+So now if you dont pass any value for third input it wont throw error cause you have one default value*/
 let loginUser = (name: string, email: string, isPaid: boolean = false)=>{
 }
 loginUser("swayam","swayam");
+
+
+// So as this function tells it should return number but its returning string and it is also not preferred way to write function if your function is returning something
+function returnNumberBad(num: number)
+{return "2";}
+
+// instead you can define what type of value you gonna retuen bt using (): type_name {} 
+function returnNumberGood(num: number): number{return 2;}
+
+const returnTwo = ():number=>{
+    return 2;
+}
+
+// Map function with arrays
+const names = ["Swayam", "Ayush", "Abhishek"]
+names.map((key:string): string => {
+    return key;
+});
+
+// Whenever you know that functional should not return something then return type should be declared as void
+function consoleError(errorMsg): void{
+    console.log(errorMsg);
+}
+
+// Whenever you wanna handle error by a function and you expects it to terminate the execution of prgram or throw an exception then we use never as return type and in this case you have to throw error or terminate execution
+function handleError(errorMsg): never{
+    throw new Error(errorMsg);
+}
 
 export{};
