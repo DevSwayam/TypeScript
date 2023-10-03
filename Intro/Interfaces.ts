@@ -21,9 +21,13 @@ const swayam: User = {
 }
 */
 
-// Re opening Interfaces in TypeScript
+// interfaces vs Types
+// 1. Type cannot be opened again
+// 2. Inheritane is allowed in Interfaces
+
+// 1. Re opening Interfaces in TypeScript
 // You want to add properties to interfaces which is previously defined
-// useCase: when you import interface from develop[ers for functionality and then you want to add extra functionality to it
+// useCase: when you import interface which are already written then you want to add extra functionality to it
 
 interface User {
     // Previous properties will be same
@@ -41,13 +45,11 @@ const swayamReopened: User = {
     githubId:"Cool.id"
 }
 
-// interfaces vs Types
-// Type cannot be opened again
-//Inheritane in Interfaces
 
+ // 2. inheritance in interfaces  
 interface Admin extends User{
     // All Funtionaluty Same
-    role: string, // New Added
+    role: string, // New property Added
 }
 
 const swayamAdmin: Admin = {

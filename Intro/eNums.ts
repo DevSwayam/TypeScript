@@ -10,5 +10,3 @@ enum studentEducation {
 };
 
 const studentInfo: [string, studentEducation, number] = ["Swayam", studentEducation.DEGREE, 15];
-
-console.log(studentInfo);
