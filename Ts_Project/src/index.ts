@@ -60,3 +60,40 @@ class animal{
         this.price=price;
     }
 }
+
+class UserInfo{
+    constructor(public email: string, public password: string){}
+    get getEmailForApple(): string{
+        return '0xswayam@gmail.com';
+    }
+}
+
+class PriavteGetterAndSetters{
+    private course_Counts:number = 6;
+    get courseCount():number{
+        return this.course_Counts;
+    }
+    /* Setter cannot have a return
+    set courseCount(courseNum):void {
+       
+    }
+    */
+    set courseCount(courseNum:number){
+       if(courseNum>0){
+        this.course_Counts=courseNum;
+       }else{
+        throw Error("Course count should atleast be 1");
+       }
+    }
+    /* Private Methods in Classes */
+    private deleteToken(){
+        console.log("Token Deleted");
+    }
+}
+
+const priavteGetterAndSetters = new PriavteGetterAndSetters();
+
+// priavteGetterAndSetters.deleteToken(); Not allowed private methods are only allowed in class
+
+
+
